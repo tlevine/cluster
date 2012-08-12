@@ -71,7 +71,8 @@ the file doesn't exist or if the "bone" user on the worker can't execute it.
 
 `bone ssh [shell command]` runs the shell command on the worker or workers. If
 you don't specify a command but do specify a worker, you open a terminal on
-that worker.
+that worker. If you specify neither a worker nor a command, you get an error.
+Or maybe you open up all of the workers in a tmux....
 
 One reason you might use this is to copy credentials to the workers. For
 example, you might want them to track a git repository on the local network
