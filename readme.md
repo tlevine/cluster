@@ -53,6 +53,22 @@ out on the worker that contains a file called "run". Secondarily, you might
 want to write a "dev-run" script that runs the worker in a non-parallelized
 manner so that you can develop without pushing .
 
+### Configure workers
+A Bone worker corresponds to a user account on a POSIX system. To add workers
+to Bone, add the username and hostname to the `WORKERS` array in `~/.bonerc`
+on the box from which you are controlling the workers. (I call mine "desk".)
+If you have several cores on one computer, you might want to create two bone
+accounts on one computer in order to use its multiple cores.
+
+    $ cat ~/.bonerc
+    WORKERS=( bone@192.168.1.103 bone@triquetrum bone@foo.thomaslevine.com bone2@triquetrum )
+
+All of Bone's communication with nodes happens over SSH, so the other part of
+the configuration is making sure that SSH is running on the workers and that
+one of your desk's SSH keys is authorized on each worker. If you're using
+Beaglebones, you can do this by copying the public key when you image the
+microSD cards.
+
 ### Running
 The cluster is controlled from one terminal with the program `bone` installed.
 You run it like this.
@@ -80,9 +96,9 @@ specify a worker with `-b`, the command runs only on that worker.
 For example,  `bone checkout tlevine@git.thomaslevine.com:middle-names.git`
 works. Any arguments get passed to git, so you can check out a particular branch
 like this: `bone checkout git://github.com/tlevine/middle-names.git dev`.
-First, `bone checkout` sets the `BONE_REPO` environment variable in `~/.bonerc`
-on the worker so that the other commands know to work on a particular repository.
-Then, it checks out the branch to `~/$BONE_REPO/git/`.
+First, `bone checkout` sets the `BONE_REPO` environment variable in
+`~/.bone-state` on the worker so that the other commands know to work on a
+particular repository. Then, it checks out the branch to `~/$BONE_REPO/git/`.
 
 `bone start` tries to run the file `~/$BONE_REPO/git/install`; it raises an error
 if the file doesn't exist or if the "bone" user on the worker can't execute it.
