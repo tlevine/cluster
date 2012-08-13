@@ -86,7 +86,7 @@ The commands are
     status
     log
 
-All of these commands ssh to the "bone" user on the node in order to run
+All of these commands ssh to the bone user on the node in order to run
 something on the node.
 
 By default, commands across multiple workers and see their output. If you
@@ -101,11 +101,11 @@ First, `bone checkout` sets the `BONE_REPO` environment variable in
 particular repository. Then, it checks out the branch to `~/$BONE_REPO/git/`.
 
 `bone start` tries to run the file `~/$BONE_REPO/git/install`; it raises an error
-if the file doesn't exist or if the "bone" user on the worker can't execute it.
+if the file doesn't exist or if the bone user on the worker can't execute it.
 You might want to put an installation script in this file.
 
 `bone start` tries to run the file `~/$BONE_REPO/git/run`; it raises an error if
-the file doesn't exist or if the "bone" user on the worker can't execute it.
+the file doesn't exist or if the bone user on the worker can't execute it.
 `bone stop` stops the running of `~/$BONE_REPO/git/run`. You may want to call
 the computation of interest from this file.
 
