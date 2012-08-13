@@ -47,9 +47,9 @@ The commands are
     start
     stop
     
+    ssh
     status
     log
-    ssh
 
 All of these commands ssh to the "bone" user on the node in order to run
 something on the node.
@@ -78,3 +78,66 @@ One reason you might use this is to copy credentials to the workers. For
 example, you might want them to track a git repository on the local network
 rather than on the internet, so you might want to give them all an ssh keys.
 That's easy enough with `bone ssh "echo $(cat id_rsa) > .ssh/id_rsa"`.
+
+Run `bone status` tells you something like this.
+
+    $ bone status
+    scaphoid    Running
+    lunate      Idle
+    triquetrum  Running
+    pisiform    Running
+    trapezium   Error
+    trapezoid   Running
+    capitate    Running
+    hamate      Idle
+
+The left column is the hostname of the node, and the right column is one of
+"Running", "Idle" and "Error".
+
+Maybe we want to investigate this "Error". This is why we keep logs. A new log
+file is started each time `bone start` is run. It is stored in
+`~/$BONE_REPO/git/log/$(date -Is)`; that is, it is named according to the
+second at which the run starts. It uses the date of the terminal controlling
+the nodes, not the date of the node on which it is run.
+
+`bone log` displays this log. By default, it shows the log file for the last
+run only. You can pass a glob select other log files. For example,
+
+* `bone log 2012-08-12T20:57:13-0400` selects the logs from one particular run.
+* `bone log $(date -Id)*` selects all logs from today.
+* `bone log *` selects all logs.
+
+The logs are concatenated and sent to stdout. They are sorted first by filename
+(date) and second by node. For example, if each worker has logs from August 12
+at 8:58 pm, 9:03 pm and 9:27 pm and you select all logs from all workers, the
+logs would be be printed in this order
+
+1   8:58pm: scaphoid
+    8:58pm: lunate
+    8:58pm: triquetrum
+    8:58pm: pisiform
+    8:58pm: trapezium
+    8:58pm: trapezoid
+    8:58pm: capitate
+    8:58pm: hamate
+    9:03pm: scaphoid
+    9:03pm: lunate
+    9:03pm: triquetrum
+    9:03pm: pisiform
+    9:03pm: trapezium
+    9:03pm: trapezoid
+    9:03pm: capitate
+    9:03pm: hamate
+    9:27pm: scaphoid
+    9:27pm: lunate
+    9:27pm: triquetrum
+    9:27pm: pisiform
+    9:27pm: trapezium
+    9:27pm: trapezoid
+    9:27pm: capitate
+    9:27pm: hamate
+
+If you specify a particular worker,
+If you do not specify a particular worker, the logs
+of different workers are concatenated in the following order
+ with headers indicating the current worker
