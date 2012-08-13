@@ -1,6 +1,22 @@
-BeagleBone Beowolf Cluster
+Bone
+======================
+Bone makes distributed computations easy for Tom. Here are some properties.
 
+* It feels unixy.
+* It is general and low-level.
+* It was designed for Tom's BeagleBone Beowolf cluster.
 
+More specifically,
+
+* It is for distributed computation, not for distributed storage; you have to
+    figure out where to store non-temporary data.
+* Bone lends itself to the
+    [divide and conquer](http://zguide.zeromq.org/page:all#Divide-and-Conquer)
+    pattern by making it easy to deploy workers. It does not help you deploy
+    ventilators or sinks.
+* Bone jobs can be run without the cluster and without bone; this facilitates
+    quick iteration loops (on the order of seconds rather than half a minute)
+    and portability.
 
 ## Installing
 
@@ -44,6 +60,7 @@ You run it like this.
 The commands are
 
     checkout
+    install
     start
     stop
     
@@ -65,9 +82,14 @@ First, `bone checkout` sets the `BONE_REPO` environment variable in `~/.bonerc`
 on the worker so that the other commands know to work on a particular repository.
 Then, it checks out the branch to `~/$BONE_REPO/git/`.
 
+`bone start` tries to run the file `~/$BONE_REPO/git/install`; it raises an error
+if the file doesn't exist or if the "bone" user on the worker can't execute it.
+You might want to put an installation script in this file.
+
 `bone start` tries to run the file `~/$BONE_REPO/git/run`; it raises an error if
 the file doesn't exist or if the "bone" user on the worker can't execute it.
-`bone stop` stops the running of `~/$BONE_REPO/git/run`
+`bone stop` stops the running of `~/$BONE_REPO/git/run`. You may want to call
+the computation of interest from this file.
 
 `bone ssh [shell command]` runs the shell command on the worker or workers. If
 you don't specify a command but do specify a worker, you open a terminal on
