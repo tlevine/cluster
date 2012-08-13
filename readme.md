@@ -137,7 +137,8 @@ logs would be be printed in this order
 24.  9:27pm: capitate
 25.  9:27pm: hamate
 
-If you specify a particular worker,
-If you do not specify a particular worker, the logs
-of different workers are concatenated in the following order
- with headers indicating the current worker
+Section headings inside the output indicate the datetime and node to which each
+log section applies.
+
+If you specify a particular worker, the same ordering applies, except that
+only that worker's logs will be displayed.
