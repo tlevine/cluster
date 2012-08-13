@@ -112,30 +112,30 @@ The logs are concatenated and sent to stdout. They are sorted first by filename
 at 8:58 pm, 9:03 pm and 9:27 pm and you select all logs from all workers, the
 logs would be be printed in this order
 
-1   8:58pm: scaphoid
-    8:58pm: lunate
-    8:58pm: triquetrum
-    8:58pm: pisiform
-    8:58pm: trapezium
-    8:58pm: trapezoid
-    8:58pm: capitate
-    8:58pm: hamate
-    9:03pm: scaphoid
-    9:03pm: lunate
-    9:03pm: triquetrum
-    9:03pm: pisiform
-    9:03pm: trapezium
-    9:03pm: trapezoid
-    9:03pm: capitate
-    9:03pm: hamate
-    9:27pm: scaphoid
-    9:27pm: lunate
-    9:27pm: triquetrum
-    9:27pm: pisiform
-    9:27pm: trapezium
-    9:27pm: trapezoid
-    9:27pm: capitate
-    9:27pm: hamate
+ 1.  8:58pm: scaphoid
+ 2.  8:58pm: lunate
+ 3.  8:58pm: triquetrum
+ 4.  8:58pm: pisiform
+ 5.  8:58pm: trapezium
+ 6.  8:58pm: trapezoid
+ 7.  8:58pm: capitate
+ 8.  8:58pm: hamate
+ 9.  9:03pm: scaphoid
+11.  9:03pm: lunate
+12.  9:03pm: triquetrum
+13.  9:03pm: pisiform
+14.  9:03pm: trapezium
+15.  9:03pm: trapezoid
+16.  9:03pm: capitate
+17.  9:03pm: hamate
+18.  9:27pm: scaphoid
+19.  9:27pm: lunate
+20.  9:27pm: triquetrum
+21.  9:27pm: pisiform
+22.  9:27pm: trapezium
+23.  9:27pm: trapezoid
+24.  9:27pm: capitate
+25.  9:27pm: hamate
 
 If you specify a particular worker,
 If you do not specify a particular worker, the logs
