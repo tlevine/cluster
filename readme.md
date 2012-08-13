@@ -28,6 +28,8 @@ This involves downloading two files.
     wget http://archlinuxarm.org/os/omap/BeagleBone-bootloader.tar.gz
     wget http://archlinuxarm.org/os/ArchLinuxARM-am33x-latest.tar.gz
 
+Then you need to partition the microSD card, format it and extract the
+archives.
 
 ## Using
 
