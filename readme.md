@@ -38,7 +38,16 @@ Ideas for me:
 * It can be for just storage of things that get set up outside the case.
 * Those tilting wall-mount monitor plates might be nice.
 * How do I mount my beaglebones?
+* Use one or two of my spare fans.
 
 In case I want to just attach a bunch of standard Beaglebone cases,
 [here](http://elinux.org/BeagleBone#Cases) are some ideas.
 [This one](http://www.thingiverse.com/thing:19153) looks perfect.
+
+### Hardware for the master
+
+Maybe it can just be a beaglebone with a bigger microSD card? Otherwise,
+
+* [Intel D2700DC Fanless Atom Mini-ITX Board](http://www.mini-itx.com/store/?c=47#D525MW)
+* [Case](http://www.thingiverse.com/thing:13080)
+* I have a PicoPSU.
