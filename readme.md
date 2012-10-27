@@ -46,8 +46,9 @@ In case I want to just attach a bunch of standard Beaglebone cases,
 
 ### Hardware for the master
 
-Maybe I just install a more powerful operating system, like Debian with
-an [image that someone already made](http://www.chromebook-linux.com/2011/11/how-to-install-gnulinux-debian-603-on.html)?
+Maybe I just install a more powerful operating system with an image that someone already made for
+[Gentoo](http://www.chromebook-linux.com/2011/11/gentoo-is-ready-for-chromebook.html) or
+[Debian](http://www.chromebook-linux.com/2011/11/how-to-install-gnulinux-debian-603-on.html)?
 
 If not, maybe it can just be a beaglebone with a bigger microSD card?
 
