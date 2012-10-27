@@ -14,7 +14,9 @@ Hardware for the worker nodes
 
 The master could just be a laptop, but I could also build it in.
 
-* 
+* Keyboard
+* Mouse
+* Mini-ITX or micro-ATX board
 * Portable monitor
 
 
