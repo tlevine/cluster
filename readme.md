@@ -41,3 +41,4 @@ Ideas for me:
 
 In case I want to just attach a bunch of standard Beaglebone cases,
 [here](http://elinux.org/BeagleBone#Cases) are some ideas.
+[This one](http://www.thingiverse.com/thing:19153) looks perfect.
