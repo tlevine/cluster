@@ -52,8 +52,18 @@ Maybe I just install a more powerful operating system with an image that someone
 
 If not, maybe it can just be a beaglebone with a bigger microSD card?
 
+Maybe I can get that cheap netbook working.
+
+* [Arch Linux on a WM8650 Netbook](http://kernelhacks.blogspot.co.uk/2012/06/arch-linux-on-wm8650-netbook.html)
+* [Arch Linux on a WM8650 Netbook II](http://kernelhacks.blogspot.co.uk/2012/06/arch-linux-on-wm8650-netbook-ii.html)
+* [Porting Arch Linux to a WM8650 tablet](http://pond-weed.com/wmt8650/index.html)
+
 Otherwise,
 
 * [Intel D2700DC Fanless Atom Mini-ITX Board](http://www.mini-itx.com/store/?c=47#D525MW)
 * [Case](http://www.thingiverse.com/thing:13080)
 * I have a PicoPSU.
+
+### Other ideas
+
+* http://liliputing.com/
